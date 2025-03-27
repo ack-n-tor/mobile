@@ -1,0 +1,16 @@
+name: user_repository
+description: A new Flutter package project.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: '>=3.0.1 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  equatable: ^2.0.5
+  dio_service:
+    path: ../../network/dio_service
+  core:
+    path: '../../core'
+

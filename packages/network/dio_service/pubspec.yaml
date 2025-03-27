@@ -1,0 +1,20 @@
+name: dio_service
+description: A new Flutter package project.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: '>=3.3.6 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  dio: ^5.4.3+1
+  connectivity_plus: ^6.0.3
+  tf_dio_cache: ^1.0.1
+  flutter_cache_manager: ^3.3.0
+  fpdart: ^1.0.0
+  hrm_framework:
+    path: ../../hrm_framework
+  core:
+    path: ../../core

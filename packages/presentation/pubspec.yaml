@@ -1,0 +1,23 @@
+name: presentation
+description: A new Flutter package project.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: '>=3.0.1 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  get_it: ^7.6.0
+  # UUID generation
+  uuid: ^3.0.7
+  #Internatinalization
+  intl: ^0.19.0
+  shared_preferences: ^2.2.0
+  event_bus_plus: ^0.6.2
+  hive: ^2.2.2
+  hive_flutter: ^1.1.0
+  hrm_framework:
+    path: ../hrm_framework

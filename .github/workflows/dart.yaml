@@ -1,0 +1,51 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: test
+
+on:
+  push:
+    branches: [ "developV3" ]
+  pull_request:
+    branches: [ "developV3" ]
+
+  workflow_call:
+    inputs:
+      runs-on:
+        description: 'Operating system'
+        required: true
+        default: 'ubuntu-latest'
+        type: string
+      version:
+        description: 'Flutter version'
+        required: true
+        default: 'latest'
+        type: string
+
+jobs:
+  test-beta:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Make action.sh executable
+        run: chmod +x ./action.sh
+
+      - name: Setup Flutter ${{ matrix.flutter-version }}
+        id: flutter
+        if: "!startsWith(matrix.bot, 'dart')"
+        uses: DanTup/gh-actions/setup-flutter@master
+        with:
+          channel: stable
+
+      - name: Dart version
+        run: dart --version
+      - name: Flutter version
+        run: flutter --version
+      - name: Flutter doctor
+        run: flutter doctor
+
+      - name: Run flutter test
+        run: flutter test
